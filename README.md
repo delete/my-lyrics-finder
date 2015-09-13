@@ -10,4 +10,8 @@ version 0.12.1.
 Run `grunt` for building and `grunt serve` for preview.
 
 
+## Preview
+
+![](http://i.imgur.com/KFu33nK.png)
+
 
