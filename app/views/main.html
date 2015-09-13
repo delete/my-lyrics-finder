@@ -28,9 +28,11 @@
 
 <div class="row marketing" ng-show="data.mus[0]">
     
+    
     <div class="well" ng-show="data.mus[0].ytid">
-        <youtube-video video-id="data.mus[0].ytid"></youtube-video>
-        
+        <div class="embed-responsive embed-responsive-16by9">
+            <youtube-video class="embed-responsive-item" video-id="data.mus[0].ytid"></youtube-video>
+        </div>  
     </div>
 
     <div class="well well-sm" ng-show="data.mus[0].url">
