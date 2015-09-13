@@ -1,0 +1,57 @@
+<div class="jumbotron">
+    <h1>My Lyrics finder</span></h1>
+    Finding the lyrics of my favorite songs <span class="glyphicon glyphicon-music">
+</div>
+
+<div class="well well-sm">
+    
+    <form class="form-inline">
+        <div class="form-group">
+            <input ng-model="search.artist" 
+                class="form-control" 
+                placeholder="Artirt name"></input>
+        </div>
+        
+        <div class="form-group">
+            <input ng-model="search.music"
+                class="form-control" 
+                placeholder="Music name"></input>
+        </div>
+        <button type="submit" 
+            class="btn btn-success"
+            ng-click="doSearch()">
+            <span class="glyphicon glyphicon-search"></span>
+        </button>
+    </form>
+
+</div>
+
+<div class="row marketing" ng-show="data.mus[0]">
+    
+    <div class="well" ng-show="data.mus[0].ytid">
+        <youtube-video video-id="data.mus[0].ytid"></youtube-video>
+        
+    </div>
+    
+    <div class="row show-grid">
+            <div class="col-xs-6">
+                <div class="well">
+                    {{ data.mus[0].text }}
+                </div> 
+            </div>
+            <div class="col-xs-6">
+                <div class="well">
+                    {{ data.mus[0].translate[0].text }}
+                </div> 
+            </div>
+    </div>
+ 
+</div>
+
+<div class="alert alert-danger text-center" 
+        role="alert" 
+        ng-show="error"> 
+        Not found! 
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+</div>
+
