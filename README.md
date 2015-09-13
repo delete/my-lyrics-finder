@@ -10,3 +10,7 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+=======
+# my-lyrics-finder
+A simple page made in AngularJS using  Vagalume's API to find songs' lyrics.
+
