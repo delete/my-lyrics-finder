@@ -3,43 +3,54 @@
     Finding the lyrics of my favorite songs <span class="glyphicon glyphicon-music">
 </div>
 
-<div class="well well-sm">
-    
-    <form class="form-inline">
-        <div class="form-group">
-            <input ng-model="search.artist" 
-                class="form-control" 
-                placeholder="Artirt name"></input>
-        </div>
-        
-        <div class="form-group">
-            <input ng-model="search.music"
-                class="form-control" 
-                placeholder="Music name"></input>
-        </div>
-        <button type="submit" 
-            class="btn btn-success"
-            ng-click="doSearch()">
-            <span class="glyphicon glyphicon-search"></span>
-        </button>
-    </form>
-
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Search</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-inline">
+            <div class="form-group">
+                <input ng-model="search.artist" 
+                    class="form-control" 
+                    placeholder="Artirt name"></input>
+            </div>
+            
+            <div class="form-group">
+                <input ng-model="search.music"
+                    class="form-control" 
+                    placeholder="Music name"></input>
+            </div>
+            <button type="submit" 
+                class="btn btn-primary"
+                ng-click="doSearch()">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+           
+    </div>
 </div>
+
+
 
 <div class="row marketing" ng-show="data.mus[0]">
     
     
-    <div class="well" ng-show="data.mus[0].ytid">
+    <div class="panel panel-default" ng-show="data.mus[0].ytid">
+        <div class="panel-body">
         <div class="embed-responsive embed-responsive-16by9">
-            <youtube-video class="embed-responsive-item" video-id="data.mus[0].ytid"></youtube-video>
-        </div>  
+                <youtube-video class="embed-responsive-item" video-id="data.mus[0].ytid"></youtube-video>
+            </div>  
+        </div>
     </div>
 
-    <div class="well well-sm" ng-show="data.mus[0].url">
-        <p class="text-center">
-            <a href="{{ data.mus[0].url }}" target="_blank"> Lyrics page</a>
-            <span class="glyphicon glyphicon-new-window"></span>
-        </p>
+    <div class="panel panel-default" ng-show="data.mus[0].url">
+        <div class="panel-body">
+            <p class="text-center">
+                <a href="{{ data.mus[0].url }}" target="_blank">
+                    <span class="label label-primary">Lyrics page</span>
+                 </a>
+            </p>
+        </div>
     </div>
     
     <div class="row show-grid">
