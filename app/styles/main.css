@@ -81,3 +81,8 @@ body {
     border-bottom: 0;
   }
 }
+
+.profile-photo-sm {
+  width: 55px;
+  height: 55px;
+}

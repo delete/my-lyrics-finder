@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h1>Top 5 of the day</span></h1>
+</div>
+
+<div class="list-group">
+  
+  <a href="" class="list-group-item" ng-repeat="music in data.mus.day.all">
+    <h4 class="list-group-item-heading">{{ music.name }}
+    <img class="img-circle pull-right profile-photo-sm" ng-src="{{music.art.pic_medium}}"><span class="badge">{{ music.views }}</span></h4>
+    <p class="list-group-item-text">{{ music.art.name }}</p>
+  </a>
+
+</div>
