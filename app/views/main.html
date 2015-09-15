@@ -44,33 +44,52 @@
             </div>  
         </div>
     </div>
-
-    <div class="panel panel-default" ng-show="vagalume.data.mus[0].url">
+    
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">
+                {{ vagalume.lyrics.art.name }} -
+                {{ vagalume.lyrics.mus[0].name }}
+            <a href="{{ vagalume.lyrics.mus[0].url }}" target="_blank">
+                <span class="label label-default pull-right">Lyrics page</span>
+            </a>
+            </h3>
+        </div>
         <div class="panel-body">
-            <p class="text-center">
-                <a href="{{ vagalume.data.mus[0].url }}" target="_blank">
-                    <span class="label label-primary">Lyrics page</span>
-                 </a>
-            </p>
+            <div class="row show-grid">
+                <div class="col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p class="text-primary">
+                                Original
+                            </p>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                {{ vagalume.lyrics.mus[0].text }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" ng-show="vagalume.lyrics.mus[0].translate[0].text">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <p class="text-primary">
+                                Translate
+                            </p>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                {{ vagalume.lyrics.mus[0].translate[0].text }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
         </div>
     </div>
-    
-    <div class="row show-grid">
-            <div class="col-xs-6">
-                <div class="well">
-                    <p>
-                        {{ vagalume.lyrics.mus[0].text }}
-                    </p>
-                </div> 
-            </div>
-            <div class="col-xs-6" ng-show="vagalume.lyrics.mus[0].translate[0].text">
-                <div class="well">
-                    <p>
-                        {{ vagalume.lyrics.mus[0].translate[0].text }}
-                    </p>
-                </div> 
-            </div>
-    </div>
+
  
 </div>
 
