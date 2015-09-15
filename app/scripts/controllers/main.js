@@ -11,12 +11,12 @@ angular.module('letrasApp')
 	.controller('MainCtrl', function ($scope, VagalumeService) {
 
 		$scope.search = {};
-		$scope.data = null;
+		$scope.vagalume = VagalumeService;
 		$scope.error = false;
 
 
 		$scope.doSearch = function (){
-			$scope.data = VagalumeService.doSearch($scope.search.artist, $scope.search.music);
+			$scope.vagalume.doSearch($scope.search.artist, $scope.search.music);
 
 			if ($scope.data) {
 				if ($scope.data.type === 'notfound' || $scope.data.type === 'song_notfound') {
@@ -24,11 +24,4 @@ angular.module('letrasApp')
 				}
 			}
 		};
-
-
-/*		$scope.$watch('search.music', function (newVal, oldVal) {
-			if (angular.isDefined(newVal)) {
-				$scope.selectedLyrics = VagalumeService.doSearch($scope.search.artist, $scope.search.music);
-			}
-		});*/
 });

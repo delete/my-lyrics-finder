@@ -11,7 +11,8 @@ angular.module('letrasApp')
   .service('VagalumeService', function (Vagalume) {
     
     var self = {
-    	'data': null,
+        'lyrics': null,
+        'rank': null,
 
     	'doSearch': function (artist, music) {
     		if((artist && music)) {
@@ -22,12 +23,10 @@ angular.module('letrasApp')
     			};
 
     			Vagalume.search.get(params, function (data) {
-    				self.data = data;
+    				self.lyrics = data;
     			});
     			
     		}
-
-    		return self.data;
     	},
 
         'getRank': function (scope, type) {
@@ -39,12 +38,10 @@ angular.module('letrasApp')
                 };
 
                 Vagalume.rank.get(params, function (data) {
-                    self.data = data;
+                    self.rank = data;
                 });
                 
             }
-
-            return self.data;
         }
     };
 
