@@ -25,14 +25,12 @@
             <button type="submit" 
                 class="btn btn-primary form-control"
                 ng-click="doSearch()">
-                <span class="glyphicon glyphicon-search"></span>
+                <i class="fa fa-search"></i>
             </button>
         </form>
            
     </div>
 </div>
-
-
 
 <div class="row marketing" ng-show="vagalume.lyrics.mus[0]">
     
@@ -44,16 +42,27 @@
             </div>  
         </div>
     </div>
-    
     <div class="panel panel-primary">
         <div class="panel-heading">
+            <a class="btn btn-default" ng-click="addOrDelFavorite(vagalume.lyrics.mus[0].id)">
+                <i class="fa"
+                    ng-class="
+                        {
+                            'fa-heart-o': !isFavorite(vagalume.lyrics.mus[0].id),
+                            'fa-heart': isFavorite(vagalume.lyrics.mus[0].id)
+                        }">
+                </i>
+            </a>
+            <a class="btn btn-default pull-right" 
+                href="{{ vagalume.lyrics.mus[0].url }}" 
+                target="_blank">
+                <i class="fa fa-external-link-square"></i>
+            </a>
             <h3 class="panel-title text-center">
                 {{ vagalume.lyrics.art.name }} -
                 {{ vagalume.lyrics.mus[0].name }}
-            <a href="{{ vagalume.lyrics.mus[0].url }}" target="_blank">
-                <span class="label label-default pull-right">Lyrics page</span>
-            </a>
             </h3>
+
         </div>
         <div class="panel-body">
             <div class="row show-grid">

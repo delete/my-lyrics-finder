@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'youtube-embed'
+    'youtube-embed',
+    'ngStorage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
