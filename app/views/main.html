@@ -87,8 +87,7 @@
                                             </p>
                                         </div>
                                         <div class="panel-body">
-                                            <p>
-                                                {{ vagalume.lyrics.mus[0].text }}
+                                            <p ng-bind-html="vagalume.lyrics.mus[0].text | FormattingText">
                                             </p>
                                         </div>
                                     </div>
@@ -101,8 +100,7 @@
                                             </p>
                                         </div>
                                         <div class="panel-body">
-                                            <p>
-                                                {{ vagalume.lyrics.mus[0].translate[0].text }}
+                                            <p ng-bind-html="vagalume.lyrics.mus[0].translate[0].text | FormattingText">
                                             </p>
                                         </div>
                                     </div>
