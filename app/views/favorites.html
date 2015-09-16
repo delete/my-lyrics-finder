@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1>My Favorites</span></h1>
+    Your favorite songs <span class="glyphicon glyphicon-music">
+</div>
+
+
+<div class="list-group">
+  
+  <a href="" class="list-group-item" ng-repeat="lyric in vagalumeFavorite.storage.favorites">
+    <h4 class="list-group-item-heading">{{ lyric.mus[0].name }}
+    <button type="button" 
+	  	class="btn btn-danger pull-right"
+	  	ng-click="delFavorite(lyric)"><i class="fa fa-trash-o pull-right"></i>
+  	</button>
+    	
+    </h4>
+    	
+    <p class="list-group-item-text">{{ lyric.art.name }}</p>
+  </a>
+
+  <button type="button" 
+  	class="btn btn-danger pull-right"
+  	ng-show="hasFavorites()"
+  	ng-click="clearFavorites()">Clear all Favorites
+  </button>
+</div>
