@@ -1,111 +1,153 @@
-<div class="jumbotron">
-    <h1>My Lyrics finder</span></h1>
-    Finding the lyrics of my favorite songs <i class="fa fa-music"></i>
-</div>
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">Search</h3>
-    </div>
-    <div class="panel-body">
-        <form class="form-inline">
-            <div class="form-group">
-                <input ng-model="search.artist" 
-                    class="form-control" 
-                    placeholder="Artist name"
-                    required></input>
-            </div>
-            
-            <div class="form-group">
-                <input ng-model="search.music"
-                    class="form-control" 
-                    placeholder="Music name"
-                    required></input>
-            </div>
-            <button type="submit" 
-                class="btn btn-primary form-control"
-                ng-click="doSearch()">
-                <i class="fa fa-search"></i>
-            </button>
-        </form>
-           
-    </div>
-</div>
-
-<div class="row marketing" ng-show="vagalume.lyrics.mus[0]">
-    
-    
-    <div class="panel panel-default" ng-show="vagalume.lyrics.mus[0].ytid">
-        <div class="panel-body">
-        <div class="embed-responsive embed-responsive-16by9">
-                <youtube-video class="embed-responsive-item" video-id="vagalume.lyrics.mus[0].ytid"></youtube-video>
-            </div>  
-        </div>
-    </div>
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <a class="btn btn-default" ng-click="addOrDelFavorite(vagalume.lyrics)">
-                <i class="fa"
-                    ng-class="
-                        {
-                            'fa-heart-o': !isFavorite(vagalume.lyrics),
-                            'fa-heart': isFavorite(vagalume.lyrics)
-                        }">
-                </i>
-            </a>
-            <a class="btn btn-default pull-right" 
-                href="{{ vagalume.lyrics.mus[0].url }}" 
-                target="_blank">
-                <i class="fa fa-external-link-square"></i>
-            </a>
-            <h3 class="panel-title text-center">
-                {{ vagalume.lyrics.art.name }} -
-                {{ vagalume.lyrics.mus[0].name }}
-            </h3>
-
-        </div>
-        <div class="panel-body">
-            <div class="row show-grid">
-                <div class="col-xs-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <p class="text-primary">
-                                Original
-                            </p>
-                        </div>
-                        <div class="panel-body">
-                            <p>
-                                {{ vagalume.lyrics.mus[0].text }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6" ng-show="vagalume.lyrics.mus[0].translate[0].text">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <p class="text-primary">
-                                Translate
-                            </p>
-                        </div>
-                        <div class="panel-body">
-                            <p>
-                                {{ vagalume.lyrics.mus[0].translate[0].text }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="row" >
+    <div class="col-md-12">    
         
+        <div class="jumbotron">
+            <h1>My Lyrics finder</span></h1>
+            Finding the lyrics of my favorite songs <i class="fa fa-music"></i>
         </div>
     </div>
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Search</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input ng-model="search.artist" 
+                            class="form-control" 
+                            placeholder="Artist name"
+                            required></input>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input ng-model="search.music"
+                            class="form-control" 
+                            placeholder="Music name"
+                            required></input>
+                    </div>
+                    <button type="submit" 
+                        class="btn btn-primary form-control"
+                        ng-click="doSearch()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                   
+            </div>
+        </div>
 
- 
+    </div>
 </div>
 
-<div class="alert alert-danger text-center" 
-        role="alert" 
-        ng-show="error"> 
-        Not found! 
-        <i class="fa fa-thumbs-down"></i>
-</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <div class="row" >
+            <div class="col-md-12" >
+
+                <div class="panel panel-default" ng-show="vagalume.lyrics.mus[0].ytid">
+                    <div class="panel-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                            <youtube-video class="embed-responsive-item" video-id="vagalume.lyrics.mus[0].ytid"></youtube-video>
+                        </div>  
+                    </div>
+                </div>
+                
+                <div ng-show="vagalume.lyrics.mus[0]">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <a class="btn btn-default" ng-click="addOrDelFavorite(vagalume.lyrics)">
+                                <i class="fa"
+                                    ng-class="
+                                        {
+                                            'fa-heart-o': !isFavorite(vagalume.lyrics),
+                                            'fa-heart': isFavorite(vagalume.lyrics)
+                                        }">
+                                </i>
+                            </a>
+                            <a class="btn btn-default pull-right" 
+                                href="{{ vagalume.lyrics.mus[0].url }}" 
+                                target="_blank">
+                                <i class="fa fa-external-link-square"></i>
+                            </a>
+                            <h3 class="panel-title text-center">
+                                {{ vagalume.lyrics.art.name }} -
+                                {{ vagalume.lyrics.mus[0].name }}
+                            </h3>
+
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <p class="text-primary">
+                                                Original
+                                            </p>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>
+                                                {{ vagalume.lyrics.mus[0].text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6" ng-show="vagalume.lyrics.mus[0].translate[0].text">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <p class="text-primary">
+                                                Translate
+                                            </p>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>
+                                                {{ vagalume.lyrics.mus[0].translate[0].text }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            <div class="alert alert-danger text-center" 
+                    role="alert" 
+                    ng-show="vagalume.lyrics.type === 'notfound' || vagalume.lyrics.type === 'song_notfound'"> 
+                    Not found! 
+                    <i class="fa fa-thumbs-down"></i>
+            </div>
+
+            </div > <!-- close  col-md-12-->
+        </div >
+
+    </div >
+    <div class="col-xs-6 col-md-4">
+
+        <div class="panel panel-primary" ng-controller="FavoritesCtrl">
+            <div class="panel-heading">
+                <h3 class="panel-title">My favorites</h3>
+            </div>
+            <div class="panel-body">
+                <div class="list-group">
+
+                        <a href="" class="list-group-item" 
+                            ng-repeat="lyric in vagalumeFavorite.storage.favorites"
+                            ng-click="showLyrics(lyric)">
+                        <h4 class="list-group-item-heading">
+                            {{ lyric.mus[0].name }}
+                        </h4>
+
+                        <p class="list-group-item-text">
+                            {{ lyric.art.name }}
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- close  panel panel-primary-->
+
+    </div >
+</div >
+
 

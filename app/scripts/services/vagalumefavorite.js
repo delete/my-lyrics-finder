@@ -15,16 +15,16 @@ angular.module('letrasApp')
 	        'storage': $localStorage.$default({
 	        	favorites: []
 	        }),
-	        
+
 			'isFavorite': function (lyrics) {
-				if(lyrics != null && lyrics.type === 'exact'){
+				if(lyrics !== null && lyrics.type === 'exact'){
 					for (var i = 0; i < self.total(); i++) {
 						if (self.storage.favorites[i].mus[0].id === lyrics.mus[0].id) {
 							return true;
 
 						}
 				
-					};
+					}
 					return false;
 				}
 			},
