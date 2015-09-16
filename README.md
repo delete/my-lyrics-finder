@@ -12,6 +12,6 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ## Preview
 
-![](http://i.imgur.com/FmGhQmr.png)
+![](http://i.imgur.com/aclWvUc.png)
 
 
