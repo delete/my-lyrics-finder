@@ -17,10 +17,16 @@ angular.module('letrasApp')
 	        }),
 	        
 			'isFavorite': function (lyrics) {
-				if (self.storage.favorites.indexOf(lyrics) !== -1) {
-					return true;
+				if(lyrics != null && lyrics.type === 'exact'){
+					for (var i = 0; i < self.total(); i++) {
+						if (self.storage.favorites[i].mus[0].id === lyrics.mus[0].id) {
+							return true;
+
+						}
+				
+					};
+					return false;
 				}
-				return false;
 			},
 	        
 			'addFavorite': function (lyrics) {
@@ -35,6 +41,24 @@ angular.module('letrasApp')
 					index = self.storage.favorites.indexOf(lyrics);
 					self.storage.favorites.splice(index, 1);
 				}
+			},
+
+			'clearFavorites': function () {
+				self.storage.$reset({
+      				favorites: []
+    			});
+			},
+
+			'hasFavorites': function () {
+				if (self.total() > 0) {
+					return true;
+				}else{
+					return false;
+				}
+			},
+
+			'total': function () {
+				return self.storage.favorites.length;
 			},
         };
 

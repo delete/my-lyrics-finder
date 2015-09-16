@@ -31,8 +31,8 @@ angular.module('letrasApp')
 		$scope.doSearch = function (){
 			$scope.vagalume.doSearch($scope.search.artist, $scope.search.music);
 
-			if ($scope.data) {
-				if ($scope.data.type === 'notfound' || $scope.data.type === 'song_notfound') {
+			if ($scope.vagalume.lyrics) {
+				if ($scope.vagalume.lyrics.type === 'notfound' || $scope.vagalume.lyrics.type === 'song_notfound') {
 					$scope.error = true;
 				}
 			}
