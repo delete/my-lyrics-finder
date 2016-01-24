@@ -12,7 +12,7 @@ module.exports = app => {
   app.get('/lyrics', (req, res) => {
       Lyrics.find((err, lyrics) => {
         if ( err ) console.log(err);
-        return res.json( {lyrics: lyrics} );
+        return res.json(lyrics);
       });
     });
   
@@ -29,14 +29,26 @@ module.exports = app => {
       });
     });
     
-//  app.route('/lyrics/:id')
-//    .all((req, res, next) => {
-//      // Middleware to execute before the routes
-//      delete req.body.id;
-//      next();
-//    })
-//    .get((req, res) => {
-//    })
-//    .post((req, res) => {
-//    });
+  app.get('/lyrics/:id', (req, res) => {
+    Lyrics.findById(req.params.id, (err, result) => {
+      if ( err ) console.log(err)
+      
+      if ( result ) {
+        return res.json(result);
+      } else {
+        return res.status(404).send('Not found');
+      }
+    });
+  });
+
+  app.delete('/lyrics/:id', (req, res) => {
+    Lyrics.remove({
+      _id: req.params.id
+    },(err, lyrics) => {
+      if ( err ) console.log(err);
+
+      res.json( {message: 'Successfully deleted!'} );
+    });
+  });
+
 };

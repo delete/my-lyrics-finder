@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const lyricsSchema = new Schema({
   art: String,
-  mus: String,
+  mus: String
 //  type: String,
 //  art: {
 //    id: String,
