@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
-let url = 'mongodb://192.168.1.6:27017/data'
+let url = 'mongodb://192.168.1.8:27017/data'
 mongoose.connect(url);
 
 const PORT = 8080;
