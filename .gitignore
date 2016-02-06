@@ -2,5 +2,5 @@
 /dist
 /.tmp
 /.sass-cache
-client/app/bower_components
+client/bower_components
 *.log
