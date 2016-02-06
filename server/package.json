@@ -4,7 +4,7 @@
   "description": "Get lyrics from vagamule's API",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,9 @@
   },
   "homepage": "https://github.com/delete/my-lyrics-finder#readme",
   "dependencies": {
-    "babel": "^6.3.26",
     "express": "latest",
-    "consign": "latest"
+    "morgan": "latest",
+    "body-parser": "latest",
+    "mongoose": "latest"
   }
 }
