@@ -39,31 +39,24 @@ http://YOU_LOCAL_IP:8080/
 
 ## Client side
 
-> (It will be running in Docker container later)
 
-### Using NodeJS
-
-```
-cd client/
-```
-
-* Installing depencencies
+### Running in containers with Docker
 
 ```
-$ npm install && bower install
+$ cd client/
 ```
 
-* Running
-
+* Building:
 ```
-$ node server.js
+$ docker-compose up
 ```
 
-* Acessing
+* Accessing:
 
 ```
 http://YOU_LOCAL_IP:8081/
 ```
+
 
 ## Preview
 
