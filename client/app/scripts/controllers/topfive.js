@@ -2,7 +2,11 @@
 'use strict';
 
 angular.module('letrasApp')
-	.controller('TopfiveCtrl', function ($scope, VagalumeService) {
+	.controller('TopfiveCtrl', TopfiveCtrl);
+
+TopfiveCtrl['$inject'] = ['$scope', 'VagalumeService'];
+
+function TopfiveCtrl($scope, VagalumeService) {
 
 		$scope.vagalume = VagalumeService;
 
@@ -13,5 +17,5 @@ angular.module('letrasApp')
 		};
 
 		getRank();
-});
+};
 })();

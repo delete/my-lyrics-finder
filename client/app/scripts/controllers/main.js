@@ -2,8 +2,11 @@
 'use strict';
 
 angular.module('letrasApp')
-	.controller('MainCtrl', function ($scope, VagalumeService, VagalumeFavorite) {
+	.controller('MainCtrl', MainCtrl);
 
+MainCtrl['$inject'] = ['$scope', 'VagalumeService', 'VagalumeFavorite']
+
+function MainCtrl($scope, VagalumeService, VagalumeFavorite) {
 		$scope.search = {};
 		$scope.error = false;
 		
@@ -25,5 +28,5 @@ angular.module('letrasApp')
 		$scope.doSearch = function (){
 			$scope.vagalume.doSearch($scope.search.artist, $scope.search.music);
 		};
-});
+};
 })();

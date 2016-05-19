@@ -2,8 +2,11 @@
 'use strict';
 
 angular.module('letrasApp')
-	.controller('FavoritesCtrl', function ($scope, VagalumeFavorite, VagalumeService) {
+	.controller('FavoritesCtrl', FavoritesCtrl);
 
+FavoritesCtrl['$inject'] = ['$scope', 'VagalumeFavorite', 'VagalumeService'];
+
+function FavoritesCtrl($scope, VagalumeFavorite, VagalumeService) {
 		$scope.vagalumeFavorite = VagalumeFavorite;
 		$scope.vagalume = VagalumeService;
 
@@ -23,5 +26,5 @@ angular.module('letrasApp')
 			$scope.vagalume.lyrics = lyrics;
 		};
 
-});
+};
 })();
