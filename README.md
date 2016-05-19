@@ -4,6 +4,8 @@ and provides a way to search yours loved songs' lyrics and save them as favorite
 
 =======
 
+>I'm using [John Papa's style guide.](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
+
 # Running
 
 * Clone the project:
