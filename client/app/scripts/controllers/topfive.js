@@ -4,16 +4,16 @@
 angular.module('letrasApp')
 	.controller('TopfiveCtrl', TopfiveCtrl);
 
-TopfiveCtrl['$inject'] = ['$scope', 'VagalumeService'];
+TopfiveCtrl['$inject'] = ['VagalumeService'];
 
-function TopfiveCtrl($scope, VagalumeService) {
-
-		$scope.vagalume = VagalumeService;
+function TopfiveCtrl(VagalumeService) {
+        var vm = this;
+		vm.vagalume = VagalumeService;
 
 		var getRank = function () {
 			var type = 'mus';
 			var scope = 'all';
-			$scope.vagalume.getRank(scope, type);
+			vm.vagalume.getRank(scope, type);
 		};
 
 		getRank();

@@ -4,29 +4,30 @@
 angular.module('letrasApp')
 	.controller('MainCtrl', MainCtrl);
 
-MainCtrl['$inject'] = ['$scope', 'VagalumeService', 'VagalumeFavorite']
+MainCtrl['$inject'] = ['VagalumeService', 'VagalumeFavorite']
 
-function MainCtrl($scope, VagalumeService, VagalumeFavorite) {
-		$scope.search = {};
-		$scope.error = false;
+function MainCtrl(VagalumeService, VagalumeFavorite) {
+		var vm = this;
+		vm.search = {};
+		vm.error = false;
 		
-		$scope.vagalume = VagalumeService;
-		$scope.vagalumeFavorite = VagalumeFavorite;
+		vm.vagalume = VagalumeService;
+		vm.vagalumeFavorite = VagalumeFavorite;
 
-		$scope.addOrDelFavorite = function (lyrics) {
-			if ($scope.isFavorite(lyrics)){
-				$scope.vagalumeFavorite.delFavorite(lyrics);		
+		vm.addOrDelFavorite = function (lyrics) {
+			if (vm.isFavorite(lyrics)){
+				vm.vagalumeFavorite.delFavorite(lyrics);		
 			}else{
-				$scope.vagalumeFavorite.addFavorite(lyrics);		
+				vm.vagalumeFavorite.addFavorite(lyrics);		
 			}
 		};
 		
-		$scope.isFavorite = function (lyrics) {
-			return $scope.vagalumeFavorite.isFavorite(lyrics);
+		vm.isFavorite = function (lyrics) {
+			return vm.vagalumeFavorite.isFavorite(lyrics);
 		};
 
-		$scope.doSearch = function (){
-			$scope.vagalume.doSearch($scope.search.artist, $scope.search.music);
+		vm.doSearch = function (){
+			vm.vagalume.doSearch(vm.search.artist, vm.search.music);
 		};
 };
 })();

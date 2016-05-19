@@ -18,17 +18,17 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        controllerAs: 'main'
+        controllerAs: 'Main'
       })
       .when('/topfive', {
         templateUrl: 'views/topfive.html',
         controller: 'TopfiveCtrl',
-        controllerAs: 'topfive'
+        controllerAs: 'TopFive'
       })
       .when('/favorites', {
         templateUrl: 'views/favorites.html',
         controller: 'FavoritesCtrl',
-        controllerAs: 'favorites'
+        controllerAs: 'Favorites'
       })
       .otherwise({
         redirectTo: '/'

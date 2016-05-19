@@ -6,11 +6,11 @@
 
 <div class="list-group">
   
-  <a href="" class="list-group-item" ng-repeat="lyric in vagalumeFavorite.storage.favorites">
+  <a href="" class="list-group-item" ng-repeat="lyric in Favorites.vagalumeFavorite.storage.favorites">
     <h4 class="list-group-item-heading">{{ lyric.mus[0].name }}
     <button type="button" 
 	  	class="btn btn-danger pull-right"
-	  	ng-click="delFavorite(lyric)"><i class="fa fa-trash-o pull-right"></i>
+	  	ng-click="Favorites.delFavorite(lyric)"><i class="fa fa-trash-o pull-right"></i>
   	</button>
     	
     </h4>
@@ -20,8 +20,8 @@
 
   <button type="button" 
   	class="btn btn-danger pull-right"
-  	ng-show="hasFavorites()"
-  	ng-click="clearFavorites()">Clear all Favorites
+  	ng-show="Favorites.hasFavorites()"
+  	ng-click="Favorites.clearFavorites()">Clear all Favorites
   </button>
 </div>
 <br>

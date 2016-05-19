@@ -4,27 +4,27 @@
 angular.module('letrasApp')
 	.controller('FavoritesCtrl', FavoritesCtrl);
 
-FavoritesCtrl['$inject'] = ['$scope', 'VagalumeFavorite', 'VagalumeService'];
+FavoritesCtrl['$inject'] = ['VagalumeFavorite', 'VagalumeService'];
 
-function FavoritesCtrl($scope, VagalumeFavorite, VagalumeService) {
-		$scope.vagalumeFavorite = VagalumeFavorite;
-		$scope.vagalume = VagalumeService;
+function FavoritesCtrl(VagalumeFavorite, VagalumeService) {
+		var vm = this;
+		vm.vagalumeFavorite = VagalumeFavorite;
+		vm.vagalume = VagalumeService;
 
-		$scope.hasFavorites = function () {
-			return $scope.vagalumeFavorite.hasFavorites();
+		vm.hasFavorites = function () {
+			return vm.vagalumeFavorite.hasFavorites();
 		};
 
-		$scope.clearFavorites = function () {
-			$scope.vagalumeFavorite.clearFavorites();
+		vm.clearFavorites = function () {
+			vm.vagalumeFavorite.clearFavorites();
 		};
 
-		$scope.delFavorite = function (lyrics) {
-			$scope.vagalumeFavorite.delFavorite(lyrics);	
+		vm.delFavorite = function (lyrics) {
+			vm.vagalumeFavorite.delFavorite(lyrics);	
 		};
 
-		$scope.showLyrics = function (lyrics){
-			$scope.vagalume.lyrics = lyrics;
+		vm.showLyrics = function (lyrics){
+			vm.vagalume.lyrics = lyrics;
 		};
-
 };
 })();
