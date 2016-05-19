@@ -1,12 +1,6 @@
+(function(){
 'use strict';
 
-/**
-* @ngdoc service
-* @name letrasApp.VagalumeFavorite
-* @description
-* # VagalumeFavorite
-* Service in the letrasApp.
-*/
 angular.module('letrasApp')
 	.service('VagalumeFavorite', function ($localStorage) {
         
@@ -65,3 +59,4 @@ angular.module('letrasApp')
         return self;
 
 });
+})();

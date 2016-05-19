@@ -1,12 +1,6 @@
+(function() {
 'use strict';
 
-/**
- * @ngdoc service
- * @name letrasApp.VagalumeService
- * @description
- * # VagalumeService
- * Service in the letrasApp.
- */
 angular.module('letrasApp')
   .service('VagalumeService', function (Vagalume) {
     
@@ -48,3 +42,4 @@ angular.module('letrasApp')
 
     return self;
   });
+})();

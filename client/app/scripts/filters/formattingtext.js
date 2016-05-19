@@ -1,13 +1,6 @@
+(function(){
 'use strict';
 
-/**
- * @ngdoc filter
- * @name letrasApp.filter:FormattingText
- * @function
- * @description
- * # FormattingText
- * Filter in the letrasApp.
- */
 angular.module('letrasApp')
   .filter('FormattingText', function () {
     return function (input) {
@@ -17,3 +10,4 @@ angular.module('letrasApp')
       return input;
     };
   });
+})();

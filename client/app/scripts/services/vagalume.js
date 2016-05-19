@@ -1,12 +1,6 @@
+(function() {
 'use strict';
 
-/**
-* @ngdoc service
-* @name letrasApp.Vagalume
-* @description
-* # Vagalume
-* Factory in the letrasApp.
-*/
 angular.module('letrasApp')
     .factory('Vagalume', function ($resource) {
 
@@ -28,3 +22,4 @@ angular.module('letrasApp')
         return fac;
 
 });
+})();

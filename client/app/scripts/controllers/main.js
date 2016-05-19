@@ -1,12 +1,6 @@
+(function() {
 'use strict';
 
-/**
-* @ngdoc function
-* @name letrasApp.controller:MainCtrl
-* @description
-* # MainCtrl
-* Controller of the letrasApp
-*/
 angular.module('letrasApp')
 	.controller('MainCtrl', function ($scope, VagalumeService, VagalumeFavorite) {
 
@@ -32,3 +26,4 @@ angular.module('letrasApp')
 			$scope.vagalume.doSearch($scope.search.artist, $scope.search.music);
 		};
 });
+})();

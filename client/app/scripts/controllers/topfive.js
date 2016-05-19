@@ -1,12 +1,6 @@
+(function() {
 'use strict';
 
-/**
-* @ngdoc function
-* @name letrasApp.controller:TopfiveCtrl
-* @description
-* # TopfiveCtrl
-* Controller of the letrasApp
-*/
 angular.module('letrasApp')
 	.controller('TopfiveCtrl', function ($scope, VagalumeService) {
 
@@ -20,3 +14,4 @@ angular.module('letrasApp')
 
 		getRank();
 });
+})();

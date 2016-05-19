@@ -1,12 +1,6 @@
+(function() {
 'use strict';
 
-/**
-* @ngdoc function
-* @name letrasApp.controller:FavoritesCtrl
-* @description
-* # FavoritesCtrl
-* Controller of the letrasApp
-*/
 angular.module('letrasApp')
 	.controller('FavoritesCtrl', function ($scope, VagalumeFavorite, VagalumeService) {
 
@@ -30,3 +24,4 @@ angular.module('letrasApp')
 		};
 
 });
+})();

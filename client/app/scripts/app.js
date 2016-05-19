@@ -1,13 +1,6 @@
+(function(){
 'use strict';
 
-/**
- * @ngdoc overview
- * @name letrasApp
- * @description
- * # letrasApp
- *
- * Main module of the application.
- */
 angular
   .module('letrasApp', [
     'ngAnimate',
@@ -40,3 +33,4 @@ angular
         redirectTo: '/'
       });
   });
+})();
