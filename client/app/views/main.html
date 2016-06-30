@@ -22,6 +22,7 @@
           </div>
           <button type="submit" 
               class="btn btn-primary form-control"
+              title="Search" 
               ng-click="Main.doSearch()">
               <i class="fa fa-search"></i>
           </button>
@@ -44,7 +45,8 @@
 
           <a href="" class="list-group-item" 
               ng-repeat="lyric in Favorites.vagalumeFavorite.lastFive()"
-              ng-click="Favorites.showLyrics(lyric)">
+              ng-click="Favorites.showLyrics(lyric)"
+              title="{{ lyric.mus[0].name }} - {{ lyric.art.name }}">
             <h4 class="list-group-item-heading text-center">
                 {{ lyric.mus[0].name }}
             </h4>
@@ -65,7 +67,8 @@
     <div ng-show="Main.vagalume.lyrics.mus[0]">
       <div class="panel panel-primary">
         <div class="panel-heading">
-            <a class="btn btn-default" ng-click="Main.addOrDelFavorite(Main.vagalume.lyrics)">
+            <a class="btn btn-default" ng-click="Main.addOrDelFavorite(Main.vagalume.lyrics)"
+              title="Favorite">
                 <i class="fa"
                     ng-class="
                         {
@@ -75,7 +78,8 @@
                 </i>
             </a>
             <a class="btn btn-default pull-right" 
-                href="{{ Main.vagalume.lyrics.mus[0].url }}" 
+                href="{{ Main.vagalume.lyrics.mus[0].url }}"
+                title="Open in vagalume.com.br" 
                 target="_blank"
                 data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">
                 <i class="fa fa-external-link-square"></i>

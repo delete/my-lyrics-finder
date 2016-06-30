@@ -4,7 +4,8 @@
 
 <div class="list-group">
   
-  <a href="" class="list-group-item" ng-repeat="music in TopFive.vagalume.rank.mus.day.all">
+  <a href="" class="list-group-item" ng-repeat="music in TopFive.vagalume.rank.mus.day.all"
+    title="{{ music.name }} - {{ music.art.name }}">
     <h4 class="list-group-item-heading">{{ music.name }}
     <img class="img-circle pull-right profile-photo-sm" ng-src="{{music.art.pic_medium}}"><span class="badge">{{ music.views }}</span></h4>
     <p class="list-group-item-text">{{ music.art.name }}</p>
