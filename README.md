@@ -62,6 +62,6 @@ http://YOU_LOCAL_IP:8081/
 
 ## Preview
 
-![](http://i.imgur.com/aclWvUc.png)
+![](http://i.imgur.com/uOPqMzJ.png)
 
 
