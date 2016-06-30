@@ -22,6 +22,10 @@ angular.module('letrasApp')
 					return false;
 				}
 			},
+
+			'lastFive': function () {
+				return self.storage.favorites.slice(Math.max(self.storage.favorites.length - 5));
+			},
 	        
 			'addFavorite': function (lyrics) {
 				if (!self.isFavorite(lyrics)) {

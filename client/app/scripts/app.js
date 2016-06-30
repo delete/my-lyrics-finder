@@ -4,6 +4,7 @@
 angular
   .module('letrasApp', [
     'ngResource',
+    'ngSanitize',
     'ngRoute',
     'youtube-embed',
     'ngStorage'
