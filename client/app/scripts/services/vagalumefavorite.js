@@ -24,7 +24,7 @@ angular.module('letrasApp')
 			},
 
 			'lastFive': function () {
-				return self.storage.favorites.slice(Math.max(self.storage.favorites.length - 5));
+				return self.storage.favorites.slice(Math.max(self.storage.favorites.length - 5, 1));
 			},
 	        
 			'addFavorite': function (lyrics) {
