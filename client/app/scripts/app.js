@@ -3,12 +3,8 @@
 
 angular
   .module('letrasApp', [
-    'ngAnimate',
-    'ngCookies',
     'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
     'youtube-embed',
     'ngStorage'
   ])
