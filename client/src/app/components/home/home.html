@@ -1,0 +1,125 @@
+
+<div class="row" >
+  <div class="col-md-8">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-search"></i> Find a lyrics</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-inline">
+          <div class="form-group">
+            <input ng-model="$ctrl.search.artist" 
+                class="form-control" 
+                placeholder="Artist name"
+                required></input>
+          </div>
+            
+          <div class="form-group">
+            <input ng-model="$ctrl.search.music"
+                class="form-control" 
+                placeholder="Music name"
+                required></input>
+          </div>
+          <button type="submit" 
+              class="btn btn-primary form-control"
+              title="Search" 
+              ng-click="$ctrl.doSearch()">
+              <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <aside class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <i class="fa fa-heart"></i> My last 5 favorites
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <p class="text-center" ng-show="$ctrl.vagalumeFavorite.total() === 0">
+            <i class="fa fa-frown-o fa-3x" ></i>
+          </p>                     
+
+          <a href="" class="list-group-item" 
+              ng-repeat="lyric in $ctrl.vagalumeFavorite.lastFive()"
+              ng-click="$ctrl.showLyrics(lyric)"
+              title="{{ lyric.mus[0].name }} - {{ lyric.art.name }}">
+            <h4 class="list-group-item-heading text-center">
+                {{ lyric.mus[0].name }}
+            </h4>
+
+            <p class="list-group-item-text text-center">
+                {{ lyric.art.name }}
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8">          
+    <div ng-show="$ctrl.vagalume.lyrics.mus[0]">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a class="btn btn-default" ng-click="$ctrl.addOrDelFavorite($ctrl.vagalume.lyrics)"
+              title="Favorite">
+                <i class="fa"
+                    ng-class="
+                        {
+                            'fa-heart-o': !$ctrl.isFavorite($ctrl.vagalume.lyrics),
+                            'fa-heart': $ctrl.isFavorite($ctrl.vagalume.lyrics)
+                        }">
+                </i>
+            </a>
+            <a class="btn btn-default pull-right" 
+                href="{{ $ctrl.vagalume.lyrics.mus[0].url }}"
+                title="Open in vagalume.com.br" 
+                target="_blank"
+                data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">
+                <i class="fa fa-external-link-square"></i>
+            </a>
+            <h3 class="panel-title text-center">
+              {{ $ctrl.vagalume.lyrics.art.name }} -
+              {{ $ctrl.vagalume.lyrics.mus[0].name }}
+            </h3>
+        </div>
+        <div class="">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="panel-custom">
+                <p class="text-primary text-center lyrics-title">
+                    Original
+                </p>
+                <div class="">
+                  <p ng-bind-html="$ctrl.vagalume.lyrics.mus[0].text | FormattingText"></p>
+                </div>
+              </div>
+            </div>
+              <div class="col-sm-6" ng-show="$ctrl.vagalume.lyrics.mus[0].translate[0].text">
+                <div class="panel-custom">
+                  <p class="text-primary text-center lyrics-title">
+                      Translate
+                  </p>
+                  <div class="">
+                    <p ng-bind-html="$ctrl.vagalume.lyrics.mus[0].translate[0].text | FormattingText"></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger text-center" role="alert" 
+      ng-show="$ctrl.vagalume.lyrics.type === 'notfound' || $ctrl.vagalume.lyrics.type === 'song_notfound'"> 
+      Not found! 
+      <i class="fa fa-thumbs-down"></i>
+    </div>
+  </div >
+</div >

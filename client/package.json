@@ -1,21 +1,48 @@
 {
   "name": "my-lyrics-finder",
-  "version": "1.0.0",
+  "version": "0.2.0",
+  "author": "@delete",
   "description": "Get lyrics from vagamule's API",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "webpack-dev-server -d --progress --colors --inline --hot --open --content-base bin/",
+    "test": "karma start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/delete/my-lyrics-finder.git"
-  },
-  "author": "Fellipe Pinheiro",
-  "bugs": {
-    "url": "https://github.com/delete/my-lyrics-finder/issues"
-  },
-  "homepage": "https://github.com/delete/my-lyrics-finder#readme",
+  "license": "MIT",
+  "repository": "https://github.com/delete/my-lyrics-finder",
   "dependencies": {
-    "express": "latest"
+    "angular": "^1.5.8",
+    "angular-resource": "^1.6.2",
+    "angular-ui-router": "1.0.0-beta.3",
+    "clean-webpack-plugin": "^0.1.10",
+    "copy-webpack-plugin": "^3.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "font-awesome": "^4.7.0",
+    "ng-annotate-webpack-plugin": "^0.1.3",
+    "ngstorage": "^0.3.11",
+    "sw-precache": "^4.0.0",
+    "webpack": "^2.2",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-spec-reporter": "0.0.23",
+    "karma-webpack": "^1.8.0",
+    "ng-annotate-loader": "^0.2.0",
+    "ngtemplate-loader": "^1.3.1",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2"
   }
 }
