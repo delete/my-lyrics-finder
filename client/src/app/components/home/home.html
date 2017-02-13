@@ -1,3 +1,50 @@
+<!-- <div class="container home">
+  <div class="form">
+    <form>
+      <div>
+        <input ng-model="$ctrl.search.artist" 
+            class="form-control" 
+            placeholder="Artist name"
+            required></input>
+      </div>
+
+      <div>
+        <input ng-model="$ctrl.search.music"
+            class="form-control" 
+            placeholder="Music name"
+            required></input>
+      </div>
+      <button type="submit" 
+          class="btn btn-primary form-control"
+          title="Search" 
+          ng-click="$ctrl.doSearch()">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="lyrics">
+    <div></div>  
+    <div></div>
+  </div>
+
+  <div class="top">
+    <a href="" class="list-group-item" 
+        ng-repeat="lyric in $ctrl.vagalumeFavorite.lastFive()"
+        ng-click="$ctrl.showLyrics(lyric)"
+        title="{{ lyric.mus[0].name }} - {{ lyric.art.name }}">
+      <h4 class="list-group-item-heading text-center">
+        {{ lyric.mus[0].name }}
+      </h4>
+
+      <p class="list-group-item-text text-center">
+        {{ lyric.art.name }}
+      </p>
+    </a>
+  </div>
+</div> -->
+
+
 
 <div class="row" >
   <div class="col-md-8">
@@ -69,13 +116,21 @@
         <div class="panel-heading">
             <a class="btn btn-default" ng-click="$ctrl.addOrDelFavorite($ctrl.vagalume.lyrics)"
               title="Favorite">
-                <i class="fa"
+              <i class="material-icons" 
+                  ng-if="$ctrl.isFavorite($ctrl.vagalume.lyrics)">
+                  favorite
+              </i>
+              <i class="material-icons" 
+                  ng-if="!$ctrl.isFavorite($ctrl.vagalume.lyrics)">
+                favorite_border
+              </i>
+                <!-- <i class="fa"
                     ng-class="
                         {
                             'fa-heart-o': !$ctrl.isFavorite($ctrl.vagalume.lyrics),
                             'fa-heart': $ctrl.isFavorite($ctrl.vagalume.lyrics)
                         }">
-                </i>
+                </i> -->
             </a>
             <a class="btn btn-default pull-right" 
                 href="{{ $ctrl.vagalume.lyrics.mus[0].url }}"

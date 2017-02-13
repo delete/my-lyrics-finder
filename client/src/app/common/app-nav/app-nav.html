@@ -1,22 +1,22 @@
 <div class="header">
-  <div class="navbar navbar-inverse" role="navigation">
+  <div class="header__navbar">
     <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">My Lyrics Finder</a>
+      <div class="navbar">
+        <div class="navbar__item">
+          <a class="navbar__brand" href="/">My Lyrics Finder</a>
         </div>
-
-        <div class="collapse navbar-collapse" id="js-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a ng-href="/topfive">Top 5 music</a></li>
-            <li><a ng-href="/favorites">My favorites</a></li>
+        <div class="navbar__item navbar__item_small">
+          <ul class="navbar__nav">
+            <li>
+              <a class="navbar__link" ui-sref="topfive" ui-sref-active="active">Top of the day</a>
+            </li>
+            <li>
+              <a class="navbar__link" ui-sref="favorites" ui-sref-active="active">My favorites</a>
+            </li>
           </ul>
         </div>
+        <div class="navbar__item"></div>
+      </div>
     </div>
   </div>
 </div>

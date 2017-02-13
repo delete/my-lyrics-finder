@@ -1,0 +1,48 @@
+.card {
+	display: flex;
+
+	&__right {
+		background-color: $moody-blue;
+		display: flex;
+	}
+
+	&__left {
+		background-color: $hawkes-blue;
+		padding: 30px;
+	}
+
+	&__btn-remove {
+		background-color: $moody-blue;
+		padding: 30px;
+	}
+
+	&__btn-remove:hover {
+		background-color: $cold-purple;
+	}
+
+	&__remove-icon {
+		font-size: 40px !important;
+		color: $deep-koama;
+	}
+
+	&__title {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	&__sub-title {
+		font-size: 15px;
+	}
+}
+
+.btn-remove-all {
+	background-color: $moody-blue;
+	padding: 20px;
+	color: $ghost-white;
+	font-size: 13px;
+	font-weight: 600;
+
+	&:hover {
+		background-color: $cold-purple;
+	}
+}

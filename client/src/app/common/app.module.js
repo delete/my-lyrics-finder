@@ -1,7 +1,7 @@
 import uiRouter from 'angular-ui-router';
 import ngResource from 'angular-resource';
 import 'ngstorage';
-import 'font-awesome/scss/font-awesome.scss';
+// import 'font-awesome/scss/font-awesome.scss';
 
 import { appComponent } from './app.component';
 import { appNav } from './app-nav/app-nav.module';

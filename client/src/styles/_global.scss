@@ -1,8 +1,95 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 body {
   font: 300 14px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 1060px;
+  max-width: 100%;
+
+  @media (min-width: 1024px) {
+    width: 1200px;
+  }
+  
+  &_center {
+    margin: 0 auto;
+  }
+
+  &__flex_column {
+    @extend .container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+
+  &__title {
+    color: #363368;
+  }
+}
+
+.list-group {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  animation: 1.25s flyin ease;
+
+  &__item {
+    position: relative;
+    margin: 20px;
+    transition: all 2s linear;
+  }
+
+  &__img {
+    border-radius: 20px;
+    margin: 10px 0;
+  }
+
+  &__title {
+    color: #363368;
+  }
+
+  &__sub-title {
+    text-align: center;
+    color: #363368;
+  }
+
+  &__badge {
+    position: absolute;
+    right: -10px;
+    top: 19px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: #9D81CE;
+    color: #F4F4F8;
+  }
+}
+
+.btn {
+  cursor: pointer;
+}
+
+// Animations
+@keyframes flyin {
+  from { 
+    transform: translateY(100%);
+    opacity:0; 
+  }
 }

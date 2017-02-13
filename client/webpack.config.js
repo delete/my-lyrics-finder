@@ -63,7 +63,8 @@ const stylesLoader = {
     }, {
       loader: "sass-loader",
       options: {
-        includePaths: [paths.styles]
+        data: '@import "variables";',
+        includePaths: [paths.styles, root]
       }
     }],
     // use style-loader in development

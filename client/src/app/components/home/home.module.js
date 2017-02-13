@@ -3,6 +3,8 @@ import uiRouter from 'angular-ui-router';
 import { homeComponent } from './home.component';
 import { FormattingText } from './formatting-text.filter';
 
+import './home.scss';
+
 export const home = angular
   .module('components.home', [
     uiRouter
