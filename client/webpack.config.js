@@ -2,6 +2,7 @@ const cleanPlugin = require('clean-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+var path = require('path')
 
 const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;
@@ -11,7 +12,7 @@ const paths = {
   static: {
     index: `${root}/index.html`,
     manifest: `${root}/manifest.json`,
-    images: `${root}/img/**/*`,
+    images: `${root}/img/**/*`
   },
 };
 
@@ -99,7 +100,7 @@ const config = {
   ],
   
   output: {
-    path: `${dist}/`,
+    path: path.resolve(__dirname, './dist'),
     publicPath: '/',
     filename: 'js/app.[name].js',
   },
@@ -113,7 +114,7 @@ module.exports = config;
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
+
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
