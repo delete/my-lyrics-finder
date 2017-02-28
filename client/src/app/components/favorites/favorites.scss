@@ -1,0 +1,87 @@
+.card {
+  display: flex;
+  max-width: 272px;
+  max-height: 108px;
+  
+  &__right {
+    background-color: $moody-blue;
+    display: flex;
+  }
+  
+  &__left {
+    background-color: $hawkes-blue;
+    padding: 30px;
+    min-width: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  &__button {
+    background-color: $moody-blue;
+    padding: 30px;
+  }
+  
+  &__button:hover {
+    background-color: $cold-purple;
+  }
+  
+  &__icon {
+    font-size: 40px !important;
+    color: $deep-koama;
+  }
+  
+  &__title {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  &__sub-title {
+    font-size: 15px;
+  }
+}
+
+.favorites_fav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.favorites_home-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1050px) {
+
+  .favorites_home-page {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.btn-remove-all {
+  background-color: $moody-blue;
+  padding: 20px;
+  color: $ghost-white;
+  font-size: 13px;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: $cold-purple;
+  }
+}
+
+.empty {
+  text-align: center;
+  margin-top: 20px;
+  
+  &__icon {
+    margin: 0 auto;
+  }
+  
+  &__text {
+    color: #363368;
+  }
+}

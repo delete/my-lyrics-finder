@@ -1,0 +1,25 @@
+.home {
+	display:flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	@media screen and (min-width: 1200px) {
+		max-width: 1200px;
+	    margin: 0 auto;		
+	}
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+	margin-bottom: 50px;
+}
+
+.top {
+	min-width: 310px;
+	display: initial;
+}

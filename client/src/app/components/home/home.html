@@ -1,0 +1,26 @@
+<div class="home">
+  
+  <div class="center">
+    <div class="form">
+      <search-form 
+        on-click="$ctrl.doSearch($event)">
+      </search-form>
+    </div>
+  
+    <div class="lyrics" ng-show="$ctrl.lyrics.mus[0]">
+      <lyrics
+          my-lyrics="$ctrl.lyrics"
+          on-click="$ctrl.addOrDelFavorite($event)">
+      </lyrics>
+
+    </div>
+  </div>
+
+  <div class="top">
+    <fav-aside 
+      last-five="$ctrl.lastFive"
+      on-click="$ctrl.openLyrics($event)">
+    </fav-aside>
+  </div>
+
+</div>

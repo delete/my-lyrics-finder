@@ -1,0 +1,38 @@
+<div class="header">
+  <div class="header__navbar">
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar__item">
+          <a class="navbar__brand" href="/">My Lyrics Finder</a>
+        </div>
+        <div class="navbar__item navbar__item_small navbar__item-mobile">
+          <button class="btn navbar__menu-button" 
+              ng-click="$ctrl.openMenu = !$ctrl.openMenu">
+            <i class="material-icons">menu</i>
+          </button>
+          <div class="navbar__nav" 
+              ng-class="{'navbar__nav_open': $ctrl.openMenu}">
+              <a class="btn navbar__link" 
+                  ui-sref="topfive" 
+                  ui-sref-active="active"
+                  ng-click="$ctrl.openMenu = !$ctrl.openMenu">Top of the day</a>
+              <a class="btn navbar__link" 
+                  ui-sref="favorites" 
+                  ui-sref-active="active"
+                  ng-click="$ctrl.openMenu = !$ctrl.openMenu">My favorites</a>
+          </div>
+        </div>
+        <div class="navbar__item navbar__item_small navbar__item-desktop">
+          <ul class="navbar__nav">
+            <li>
+              <a class="navbar__link" ui-sref="topfive" ui-sref-active="active">Top of the day</a>
+            </li>
+            <li>
+              <a class="navbar__link" ui-sref="favorites" ui-sref-active="active">My favorites</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
