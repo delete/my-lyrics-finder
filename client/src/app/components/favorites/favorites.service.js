@@ -1,5 +1,5 @@
 export function FavoritesService($localStorage) {
-
+  'ngInject';
   const service = {
 
     storage: $localStorage.$default({

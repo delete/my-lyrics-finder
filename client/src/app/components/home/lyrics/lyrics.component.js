@@ -8,6 +8,7 @@ export const lyricsComponent = {
   templateUrl,
   controller: class LyricsComponent {
     constructor(FavoritesService){
+      'ngInject';
       this._FavoritesService = FavoritesService;
     }
 

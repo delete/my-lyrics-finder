@@ -4,6 +4,7 @@ export const navComponent = {
   templateUrl,
   controller: class NavComponent {
     constructor($state){
+      'ngInject';
       this.state = $state;
     }
   }
