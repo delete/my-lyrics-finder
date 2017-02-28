@@ -1,34 +1,37 @@
 export function VagalumeService(VagalumeRequestService) {
+  'ngInject';
 
-  var self = {
-    'lyrics': null,
-    'rank': null,
+  const self = {
 
-    'doSearch': function(artist, music) {
+    doSearch: (artist, music) => {
       if ((artist && music)) {
 
-        var params = {
+        const params = {
           'art': artist,
           'mus': music
         };
 
-        VagalumeRequestService.search.get(params, function(data) {
-          self.lyrics = data;
+        const mySearch = VagalumeRequestService.search();
+        
+        return mySearch.get(params, function(data) {
+          return data;
         });
 
       }
     },
 
-    'getRank': function(scope, type) {
+    getRank: (scope = 'all', type = 'mus') => {
       if ((scope && type)) {
 
-        var params = {
+        const params = {
           'scope': scope,
           'type': type
         };
 
-        VagalumeRequestService.rank.get(params, function(data) {
-          self.rank = data;
+        const topFiveRank = VagalumeRequestService.rank(5);
+        
+        return topFiveRank.get(params, (data) => {
+          return data;
         });
 
       }

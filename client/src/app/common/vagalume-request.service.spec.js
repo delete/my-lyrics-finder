@@ -1,36 +1,36 @@
 'use strict';
 
-describe('Service: Vagalume', function () {
+describe('Service: Vagalume', () => {
 
     // load the service's module
     beforeEach(module('letrasApp'));
 
     // instantiate service
-    var Vagalume;
-    beforeEach(inject(function (_Vagalume_) {
+    const Vagalume;
+    beforeEach(inject((_Vagalume_) => {
         Vagalume = _Vagalume_;
     }));
 
-    it('should return 5 lyrics data from vagalume api', function () {
-        var params = {
+    it('should return 5 lyrics data from vagalume api', () => {
+        const params = {
             'scope': 'all',
             'type': 'mus'
         };
 
-        Vagalume.rank.get(params, function (data) {
+        Vagalume.rank.get(params, (data) => {
             expect(data).not.toBe(null);
             expect(data.all.length).toBe(5);
         });
 
     });
 
-    it('should return Last Kiss lyrics from pearl jam', function () {
-        var params = {
+    it('should return Last Kiss lyrics from pearl jam', () => {
+        const params = {
             'art': 'Pearl Jam',
             'mus': 'Last Kiss'
         };
 
-        Vagalume.search.get(params, function (data) {
+        Vagalume.search.get(params, (data) => {
             expect(data).not.toBe(null);
             expect(data.type).toBe('exact');
             expect(data.art.name).toBe('Pearl Jam');

@@ -3,30 +3,46 @@ import templateUrl from './home.html';
 export const homeComponent = {
   templateUrl,
   controller: class HomeComponent {
-    constructor(VagalumeService, FavoritesService) {
+    constructor($scope, VagalumeService, FavoritesService) {
       'ngInject';
+      
+      this._VagalumeService = VagalumeService;
+      this._FavoritesService = FavoritesService;
 
-      this.search = {};
-      this.error = false;
-    
-      this.vagalume = VagalumeService;
-      this.vagalumeFavorite = FavoritesService;
+      this.$onInit = () => {
+        this.lyrics = {};
+        this._lastFive();
+      }
     }
 
-    addOrDelFavorite(lyrics) {
-      if (this.isFavorite(lyrics)){
-        this.vagalumeFavorite.delFavorite(lyrics);    
+    addOrDelFavorite(event) {
+      var lyrics = event.lyrics;
+
+      if (this._FavoritesService.isFavorite(lyrics)){
+        this._FavoritesService.delFavorite(lyrics);
       }else{
-        this.vagalumeFavorite.addFavorite(lyrics);    
+        this._FavoritesService.addFavorite(lyrics);
       }
+      // Update favorite array
+      this._lastFive()
     };
     
-    isFavorite(lyrics) {
-      return this.vagalumeFavorite.isFavorite(lyrics);
+    _lastFive() {
+      this.lastFive = this._FavoritesService.lastFive();
+    }
+
+    doSearch(event){
+      console.log('aa')
+      var vm = this;
+      var lyrics = event.lyrics;
+      if ( lyrics ) {
+        this._VagalumeService.doSearch(lyrics.artist, lyrics.music)
+          .$promise.then( data => vm.lyrics = data);
+      }
     };
 
-    doSearch(){
-      this.vagalume.doSearch(this.search.artist, this.search.music);
-    };
+    openLyrics(event){
+      this.lyrics = event.lyrics;
+    }
   }
 };

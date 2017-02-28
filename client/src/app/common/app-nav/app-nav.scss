@@ -1,51 +1,140 @@
 .header {
-	&__navbar {
-		display: flex;
-		justify-content: center;
-		box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
-		background-color: $moody-blue;
-	}
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+    background-color: $moody-blue;
+  }
 }
 
 .navbar {
-	align-items: center;
-	display:flex;
-	justify-content: space-between;
-	padding: 15px;
-	
-	&__item {
-		flex: 2;
-	}
+  align-items: center;
+  display:flex;
+  justify-content: space-between;
+  padding: 15px;
+  
+  &__item {
+    flex: 2;
+    
+    &_small {
+      flex: 1;
+    }
+  }
 
-	&__item_small {
-		flex: 1;
-	}
+  &__item-mobile {
+    display: flex;
+    flex-direction: columns;
+    justify-content: flex-end;
 
-	&__brand {
-		text-decoration: none;
-		outline: none;
-		color: $ghost-white;
-		font-weight: 600;
-		font-size: 16px;
-	}
+    @media screen and (min-width: 768px) {
+      & {
+        display: none;
+      }
+    }
+  }
 
-	&__nav {
-		display: flex;
-		justify-content: space-around;
-		flex: 1;
-	}
+  &__item-desktop {
+      display: none;
+  }
 
-	&__link {
-		text-decoration: none;
-		outline: none;
-		color: $hawkes-blue;
-	    font-size: 14px;
-	    font-weight: 100;
-	}
+  @media screen and (min-width: 768px) {
+    &__item-desktop {
+      display: block;
+    }
+  }
 
-	&__link:hover, &__link.active {
-		border-bottom: 4px solid $ghost-white;
-		color: $ghost-white;
-		padding-bottom: 14px;
-	}
+  &__brand {
+    text-decoration: none;
+    outline: none;
+    color: $ghost-white;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &__menu-button {
+    background-color: transparent;
+
+    &:hover i {
+      color: $hawkes-blue; 
+    }
+
+    & i {
+      font-size: 2em;
+    }
+  }
+
+  &__nav {
+      background-color: $deep-koama;
+        border-bottom-left-radius: 3px;
+      padding: 20px;
+      position: absolute;
+    transform: translate(0, -256px);
+    transition: all .3s;
+      right: 0;
+      width: 160px;
+      top: 58px;
+      z-index: 3;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    &_open {
+      transform: translate(0,0);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    outline: none;
+    color: $hawkes-blue;
+      font-size: 14px;
+      font-weight: 100;
+      padding: 10px;
+      text-align: center;
+      display: block;
+      margin: 10px 0;
+  }
+
+  &__link:hover, &__link.active {
+    background-color: $moody-blue;
+    border-radius: 3px;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__nav {      
+      background-color: transparent;
+      border-bottom-left-radius: 0;
+      padding: 0;
+      position: static;
+      transform: translate(0,0);
+      transition: all .3s;
+      right: initial;
+      width: 100%;
+      top: initial;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+    }
+
+    &__link {
+      padding: 0;
+      display: initial;
+      margin: 0;
+    }
+    &__link:hover, &__link.active {
+      padding-bottom: 15px;
+      border-bottom: 5px solid $ghost-white;
+      border-radius: 0;
+    }
+  }
+}
+
+.nav {
+  &__item {
+    padding: 10px;
+      text-align: center;
+
+      &:hover, &__item.active {
+      }
+  }
 }

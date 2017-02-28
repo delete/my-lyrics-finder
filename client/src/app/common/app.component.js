@@ -1,5 +1,7 @@
-import templateUrl from './app.html';
-
 export const appComponent = {
-  templateUrl
+  template: `
+    <app-nav></app-nav>
+    <div style="flex: 1;" ui-view></div>
+    <app-footer></app-footer>
+  `
 };

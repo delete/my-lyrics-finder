@@ -1,5 +1,10 @@
 import templateUrl from './app-nav.html';
 
 export const navComponent = {
-  templateUrl
+  templateUrl,
+  controller: class NavComponent {
+    constructor($state){
+      this.state = $state;
+    }
+  }
 };

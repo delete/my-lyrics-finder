@@ -1,0 +1,44 @@
+<div class="lyrics__heading">
+  <div style="display: flex;">
+    <h3 class="panel-title text_center">
+      {{ $ctrl.myLyrics.art.name }} - {{ $ctrl.myLyrics.mus[0].name }} 
+    </h3>
+    <a class="btn lyrics__link-icon" 
+        href="{{ $ctrl.myLyrics.mus[0].url }}"
+        title="Open in vagalume.com.br" 
+        target="_blank">
+         <i class="material-icons">link</i>
+    </a>
+  </div>
+  <div class="lyrics__heart-icon">
+    <a class="btn" 
+        ng-click="$ctrl.clickButton($ctrl.myLyrics)"
+        title="{{$ctrl.isFavorite($ctrl.myLyrics) ? 'Your favorite' : 'Add as favorite'}}">
+
+      <i class="material-icons" 
+          ng-if="$ctrl.isFavorite($ctrl.myLyrics)">
+          favorite
+      </i>
+      <i class="material-icons" 
+          ng-if="!$ctrl.isFavorite($ctrl.myLyrics)">
+        favorite_border
+      </i>
+    </a>
+  </div>
+</div>
+
+<div class="lyrics__panel">
+  <div class="lyrics lyrics__lyrics">
+    <p class="lyrics__title text_left">Original</p>
+    <div class="">
+      <p ng-bind-html="$ctrl.myLyrics.mus[0].text | FormattingText"></p>
+    </div>
+  </div>
+  
+  <div class="lyrics lyrics__translate" ng-show="$ctrl.myLyrics.mus[0].translate[0].text">
+    <p class="lyrics__title text_right">Translate</p>
+    <div class="">
+      <p ng-bind-html="$ctrl.myLyrics.mus[0].translate[0].text | FormattingText"></p>
+    </div>
+  </div>
+</div>

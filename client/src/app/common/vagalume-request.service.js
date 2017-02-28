@@ -1,18 +1,34 @@
 export function VagalumeRequestService($resource) {
+  'ngInject';
 
-  var fac = {};
+  const mainUrl = 'http://api.vagalume.com.br/';
 
-  fac.search = $resource("http://api.vagalume.com.br/search.php?art=:art&mus=:mus&extra=ytid", {
-    art: '@art',
-    mus: '@mus'
-  });
-
-  fac.rank = $resource("http://api.vagalume.com.br/rank.php?type=:type&period=day&scope=:scope&limit=5", {
-    scope: '@scope',
-    type: '@type'
-  });
+  const service = {
+    search: search,
+    rank: rank
+  };  
+  
+  return service;
 
 
-  return fac;
+  function search () {
+    return $resource(
+      `${mainUrl}search.php?art=:art&mus=:mus&extra=ytid`,
+      {
+        art: '@art',
+        mus: '@mus'
+      }
+    );
+  }
+
+  function rank (limit = 5, period = 'day') {
+    return $resource(
+      `${mainUrl}rank.php?type=:type&period=${period}&scope=:scope&limit=${limit}`,
+      {
+        scope: '@scope',
+        type: '@type'
+      }
+    );
+  }
 
 }

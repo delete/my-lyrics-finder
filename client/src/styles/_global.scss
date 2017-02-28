@@ -6,6 +6,9 @@
 
 body {
   font: 300 14px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 ul {
@@ -16,8 +19,8 @@ ul {
   width: 1060px;
   max-width: 100%;
 
-  @media (min-width: 1024px) {
-    width: 1200px;
+  @media (min-width: 1200px) {
+    width: 1170px;
   }
   
   &_center {
@@ -40,21 +43,18 @@ ul {
 
   &__title {
     color: #363368;
+    margin-bottom: 50px;
   }
 }
 
 .list-group {
-  display: flex;
   width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 50px;
   animation: 1.25s flyin ease;
 
   &__item {
     position: relative;
-    margin: 20px;
-    transition: all 2s linear;
+    margin: 20px 10px;
+    transition: all .5s ease;
   }
 
   &__img {
@@ -84,6 +84,30 @@ ul {
 
 .btn {
   cursor: pointer;
+}
+
+.text {
+  &_center {
+    text-align: center;
+  }
+
+  &_right {
+    text-align: right;
+  }
+
+  &_left {
+    text-align: left;
+  }
+}
+
+.pull {
+  &_right {
+    float: right;
+  }
+
+  &_left {
+    float: left;
+  }
 }
 
 // Animations

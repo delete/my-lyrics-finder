@@ -1,58 +1,64 @@
 export function FavoritesService($localStorage) {
 
-  var self = {
+  const service = {
 
-    'storage': $localStorage.$default({
+    storage: $localStorage.$default({
       favorites: []
     }),
-
-    'isFavorite': function(lyrics) {
-      if (lyrics !== null && lyrics.type === 'exact') {
-        for (var i = 0; i < self.total(); i++) {
-          if (self.storage.favorites[i].mus[0].id === lyrics.mus[0].id) {
-            return true;
-          }
-        }
-        return false;
-      }
-    },
-
-    'lastFive': function() {
-      return self.storage.favorites.slice(Math.max(self.storage.favorites.length - 5, 1));
-    },
-
-    'addFavorite': function(lyrics) {
-      if (!self.isFavorite(lyrics)) {
-        self.storage.favorites.push(lyrics);
-      }
-    },
-
-    'delFavorite': function(lyrics) {
-      if (self.isFavorite(lyrics)) {
-        var index = null;
-        index = self.storage.favorites.indexOf(lyrics);
-        self.storage.favorites.splice(index, 1);
-      }
-    },
-
-    'clearFavorites': function() {
-      self.storage.$reset({
-        favorites: []
-      });
-    },
-
-    'hasFavorites': function() {
-      if (self.total() > 0) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-
-    'total': function() {
-      return self.storage.favorites.length;
-    },
+    isFavorite: isFavorite,
+    lastFive: lastFive,
+    addFavorite: addFavorite,
+    delFavorite: delFavorite,
+    clearFavorites: clearFavorites,
+    hasFavorites: hasFavorites,
+    total: total
   };
 
-  return self;
+  return service;
+
+  function isFavorite (lyrics) {
+    if (lyrics !== null && lyrics.type === 'exact') {
+      for (var i = 0; i < total(); i++) {
+        if (service.storage.favorites[i].mus[0].id === lyrics.mus[0].id) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
+
+  function lastFive () {
+    var favorites = service.storage.favorites;
+    var lastFive = favorites.slice( Math.max(favorites.length - 5, 0) );
+    return lastFive;
+  }
+
+  function addFavorite (lyrics) {
+    if (!isFavorite(lyrics)) {
+      service.storage.favorites.unshift(lyrics);
+    }
+  }
+
+  function delFavorite (lyrics) {
+    if (isFavorite(lyrics)) {
+      let index = null;
+      index = service.storage.favorites.indexOf(lyrics);
+      service.storage.favorites.splice(index, 1);
+    }
+  }
+
+  function clearFavorites () {
+    service.storage.$reset({
+      favorites: []
+    });
+  }
+
+  function hasFavorites () {
+    return total() > 0;
+  }
+
+  function total () {
+    return service.storage.favorites.length;
+  }
+
 }

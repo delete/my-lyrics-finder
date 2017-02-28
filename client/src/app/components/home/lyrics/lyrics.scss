@@ -1,0 +1,65 @@
+.lyrics {
+  padding: 25px 0 0 25px;
+  
+  &__heading {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__panel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 690px) {
+      & {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+
+  &__lyrics {
+    text-align: right;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 25px;
+
+    @media screen and (min-width: 690px) {
+      border-right: 1px solid #dedede;
+      border-bottom: 0;
+      padding-right: 25px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__translate {
+    text-align: left;
+  }
+
+  &__title {
+    color: $deep-koama;
+  }
+
+  &__heart-icon {
+    position: absolute;
+    left: 0;
+    transition: all .3s;
+  }
+
+  &__heart-icon:hover {
+    transform: scale(1.5);
+  }
+
+  &__heart-icon i {
+    font-size: 3.5em;
+    color: #ce3e3e;
+  }
+
+  &__link-icon {
+    margin-left: 5px;
+  }
+
+  &__link-icon i {
+    font-size: 1.8em;
+  }
+}
