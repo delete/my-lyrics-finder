@@ -1,6 +1,7 @@
 const cleanPlugin = require('clean-webpack-plugin');
 const copyPlugin = require('copy-webpack-plugin');
 const extractPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 const root = `${__dirname}/src`;
 const dist = `${__dirname}/dist`;
@@ -34,9 +35,14 @@ const prep = {
 const scriptsLoader = {
   test: /\.js$/,
   exclude: /node_modules/,
-  loaders: [
-    'ng-annotate-loader',
-    'babel-loader',
+  loaders: [{
+      loader: 'ng-annotate-loader',
+    },{
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015']
+      }
+    }
   ],
 };
 
@@ -77,7 +83,7 @@ const config = {
   entry: {
     bundle: paths.app,
   },
-  devtool: 'source-map',
+  devtool: '#eval-source-map',
   module: {
     rules: [
       scriptsLoader,
@@ -104,3 +110,26 @@ const config = {
 };
 
 module.exports = config;
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
+}
+
+
