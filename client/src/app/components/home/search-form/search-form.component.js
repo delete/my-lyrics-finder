@@ -7,7 +7,7 @@ export const searchFormComponent = {
   template: `
       <div class="panel__heading">
         <h3 class="panel__title">
-          Find your favorites lyrics
+          Find my favorite lyrics
         </h3>
       </div>
       <div class="panel__body">

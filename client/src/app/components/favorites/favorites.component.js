@@ -31,7 +31,7 @@ export const favoritesComponent = {
       </li>
       <div class="empty" ng-show="$ctrl.favoriteLyrics.length == 0">
         <i class="material-icons empty__icon" style="font-size: 4em;">mood_bad</i>
-        <p class="empty__text"> You favorites is empty.</p>
+        <p class="empty__text"> My favorites' list is empty.</p>
       </div>
     </ul>
   `,
