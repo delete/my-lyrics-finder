@@ -107,6 +107,7 @@ const config = {
   devServer: {
     port: 8080,
     historyApiFallback: true,
+    host: '0.0.0.0'
   },
 };
 
