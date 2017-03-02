@@ -66,8 +66,10 @@ const stylesLoader = {
   test: /\.scss$/,
   loader: extractSass.extract({
     loader: [{
-      loader: "css-loader"
-    }, {
+      loader: "css-loader?importLoaders=1"
+    },{
+      loader: 'postcss-loader',
+    },{
       loader: "sass-loader",
       options: {
         data: '@import "variables";',
