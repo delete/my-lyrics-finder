@@ -15,7 +15,7 @@ export const topfiveComponent = {
           <ul class="list-group favorites_fav" ng-cloak>
             <li class="list-group__item" 
                 ng-repeat="music in $ctrl.lyricsOnRank"
-                title="{{ music.name }} - {{ music.art.name }}">
+                title="{{ music.name }} - {{ music.art.name }}" ng-cloak>
               
               <h4 class="list-group__title">
                 {{ music.art.name }}
