@@ -7,7 +7,7 @@
     "start": "webpack-dev-server -d --progress --colors --inline --hot --open --content-base bin/",
     "build": "NODE_ENV=production webpack --progress --hide-modules",
     "deploy": "git subtree push --prefix dist origin gh-pages",
-    "test": "karma start"
+    "test": "karma start --auto-watch"
   },
   "license": "MIT",
   "repository": "https://github.com/delete/my-lyrics-finder",

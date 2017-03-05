@@ -28,8 +28,8 @@ module.exports = (config) => {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: true,
+    browsers: ['PhantomJS'],
+    singleRun: false,
     concurrency: Infinity,
   });
 };

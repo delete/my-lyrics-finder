@@ -1,19 +1,19 @@
-'use strict';
+// 'use strict';
 
-describe('Controller: FavoritesCtrl', function () {
+// describe('Controller: FavoritesCtrl', function () {
 
-  // load the controller's module
-  beforeEach(module('letrasApp'));
+//   // load the controller's module
+//   beforeEach(module('letrasApp'));
 
-  var FavoritesCtrl,
-    scope;
+//   var FavoritesCtrl,
+//     scope;
 
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    FavoritesCtrl = $controller('FavoritesCtrl', {
-      $scope: scope
-      // place here mocked dependencies
-    });
-  }));
-});
+//   // Initialize the controller and a mock scope
+//   beforeEach(inject(function ($controller, $rootScope) {
+//     scope = $rootScope.$new();
+//     FavoritesCtrl = $controller('FavoritesCtrl', {
+//       $scope: scope
+//       // place here mocked dependencies
+//     });
+//   }));
+// });

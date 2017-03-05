@@ -1,41 +1,39 @@
-'use strict';
+// 'use strict';
 
-describe('Service: Vagalume', () => {
+// describe('Service: Vagalume', () => {
 
-    // load the service's module
-    beforeEach(module('letrasApp'));
+//     // load the service's module
+//     beforeEach(module('common.app'));
+ 
+//     beforeEach(inject((_Vagalume_) => {
+//         const Vagalume = _Vagalume_;
+//     }));
 
-    // instantiate service
-    const Vagalume;
-    beforeEach(inject((_Vagalume_) => {
-        Vagalume = _Vagalume_;
-    }));
+//     it('should return 5 lyrics data from vagalume api', () => {
+//         const params = {
+//             'scope': 'all',
+//             'type': 'mus'
+//         };
 
-    it('should return 5 lyrics data from vagalume api', () => {
-        const params = {
-            'scope': 'all',
-            'type': 'mus'
-        };
+//         Vagalume.rank.get(params, (data) => {
+//             expect(data).not.toBe(null);
+//             expect(data.all.length).toBe(5);
+//         });
 
-        Vagalume.rank.get(params, (data) => {
-            expect(data).not.toBe(null);
-            expect(data.all.length).toBe(5);
-        });
+//     });
 
-    });
+//     it('should return Last Kiss lyrics from pearl jam', () => {
+//         const params = {
+//             'art': 'Pearl Jam',
+//             'mus': 'Last Kiss'
+//         };
 
-    it('should return Last Kiss lyrics from pearl jam', () => {
-        const params = {
-            'art': 'Pearl Jam',
-            'mus': 'Last Kiss'
-        };
+//         Vagalume.search.get(params, (data) => {
+//             expect(data).not.toBe(null);
+//             expect(data.type).toBe('exact');
+//             expect(data.art.name).toBe('Pearl Jam');
+//             expect(data.mus[0].name).toBe('Last Kiss');
+//         });
+//     });
 
-        Vagalume.search.get(params, (data) => {
-            expect(data).not.toBe(null);
-            expect(data.type).toBe('exact');
-            expect(data.art.name).toBe('Pearl Jam');
-            expect(data.mus[0].name).toBe('Last Kiss');
-        });
-    });
-
-});
+// });

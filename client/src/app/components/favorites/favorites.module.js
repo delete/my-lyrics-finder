@@ -1,4 +1,7 @@
 import uiRouter from 'angular-ui-router';
+
+import { common } from '../../common/common.module';
+
 import { favoritesPageComponent } from './favorites-page.component';
 import { favoritesComponent } from './favorites.component';
 import { FavoritesService } from './favorites.service';
@@ -7,7 +10,8 @@ import './favorites.scss';
 
 export const favorites = angular
   .module('components.favorites', [
-    uiRouter
+    uiRouter,
+    common // use VagalumeService
   ])
   .component('favoritesPage', favoritesPageComponent)
   .component('favorites', favoritesComponent)
