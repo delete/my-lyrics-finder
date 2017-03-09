@@ -6,8 +6,11 @@ module.exports = (config) => {
     frameworks: ['jasmine'],
     webpack: webpackConfig,
     files: [
-      'src/app/root.module.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-ui-router/release/angular-ui-router.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/babel-polyfill/dist/polyfill.js',
+      'src/app/root.module.js',
       'src/app/**/*.spec.js',
     ],
     exclude: [
@@ -21,7 +24,8 @@ module.exports = (config) => {
     ],
     preprocessors: {
       'src/app/root.module.js': ['webpack'],
-      'src/app/**/*.spec.js': ['webpack'],
+      'src/app/**/*.js': ['webpack'],
+      'src/app/**/*.spec.js': ['webpack']
     },
     reporters: ['spec'],
     port: 9876,
@@ -29,7 +33,7 @@ module.exports = (config) => {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: true,
+    singleRun: false,
     concurrency: Infinity,
   });
 };

@@ -1,19 +1,17 @@
 'use strict';
+import { FormattingText } from './formatting-text.filter';
+
+const fakeSce = {
+  trustAsHtml: txt => txt
+}
+
+const formattingText = FormattingText(fakeSce);
 
 describe('Filter: FormattingText', () => {
 
-  // load the filter's module
-  beforeEach(module('letrasApp'));
-
-  // initialize a new instance of the filter before each test
-  let FormattingText;
-  beforeEach(inject(($filter) => {
-    FormattingText = $filter('FormattingText');
-  }));
-
-  it('should return the input with <br> tag', () => {
+  it('should change "\\n" for <br> tag from input text', () => {
     let text = 'Testing\nthis\nfor\nsure!';
-    expect(FormattingText(text)).toBe('Testing<br>this<br>for<br>sure!');
+    expect(formattingText(text)).toBe('Testing<br>this<br>for<br>sure!');
   });
 
 });
