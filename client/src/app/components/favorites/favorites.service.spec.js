@@ -139,7 +139,7 @@ describe('Service: FavoritesService', () => {
       }],
       "badwords": false
     }
-  ]
+  ];
 
   const fakeLocalStorage = {
     $default: (objectToSave) => {

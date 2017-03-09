@@ -3,10 +3,10 @@ import templateUrl from './home.html';
 export const homeComponent = {
   templateUrl,
   controller: class HomeComponent {
-    constructor($scope, VagalumeService, FavoritesService) {
+    constructor($scope, VagalumeRequestService, FavoritesService) {
       'ngInject';
       
-      this._VagalumeService = VagalumeService;
+      this._VagalumeService = VagalumeRequestService;
       this._FavoritesService = FavoritesService;
 
       this.$onInit = () => {
@@ -36,7 +36,7 @@ export const homeComponent = {
       var vm = this;
       var lyrics = event.lyrics;
       if ( lyrics ) {
-        this._VagalumeService.doSearch(lyrics.artist, lyrics.music)
+        this._VagalumeService.search(lyrics.artist, lyrics.music)
           .$promise.then( data => vm.lyrics = data);
       }
     };

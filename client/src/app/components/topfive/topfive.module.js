@@ -23,10 +23,8 @@ function configRoute($stateProvider) {
       url: '/topfive',
       component: 'topfive',
       resolve: {
-        lyricsOnRank: (VagalumeService) => {
-          const type = 'mus',
-                scope = 'all';
-          return VagalumeService.getRank(scope, type)
+        lyricsOnRank: (VagalumeRequestService) => {
+          return VagalumeRequestService.rank()
             .$promise.then( data => data.mus.day.all );
         }
       }

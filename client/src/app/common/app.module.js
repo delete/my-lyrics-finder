@@ -1,6 +1,4 @@
 import uiRouter from 'angular-ui-router';
-import ngResource from 'angular-resource';
-import 'ngstorage';
 
 import './app.scss';
 
@@ -8,9 +6,7 @@ import { appComponent } from './app.component';
 
 export const app = angular
   .module('common.app', [
-    uiRouter,
-    ngResource,
-    'ngStorage'
+    uiRouter
   ])
   .component('app', appComponent)
   .config(configRoute)
