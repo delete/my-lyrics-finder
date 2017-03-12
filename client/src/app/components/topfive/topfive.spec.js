@@ -1,19 +1,29 @@
-// 'use strict';
+import { top5Lyrics } from './dataMock';
 
-// describe('Controller: TopfiveCtrl', function () {
+describe('Topfive component', () => {
+  beforeEach(() => {
+    angular.mock.module('components.topfive');
+  });
 
-//   // load the controller's module
-//   beforeEach(module('letrasApp'));
+  describe('Controller', () => {
+    let $componentController;
+    let controller;
+    const mockLyrics = top5Lyrics.mus.day.all;
 
-//   var TopfiveCtrl,
-//     scope;
+    beforeEach(inject(($injector) => {
+      $componentController = $injector.get('$componentController');
+      controller = $componentController('topfive',
+        { $scope: {} },
+        { lyricsOnRank: mockLyrics }
+      );
+    }));
 
-//   // Initialize the controller and a mock scope
-//   beforeEach(inject(function ($controller, $rootScope) {
-//     scope = $rootScope.$new();
-//     TopfiveCtrl = $controller('TopfiveCtrl', {
-//       $scope: scope
-//       // place here mocked dependencies
-//     });
-//   }));
-// });
+    it('should bind to the correct total of lyrics', () => {
+      const expected = top5Lyrics.mus.day.all.length; // 5
+      const actual = controller.lyricsOnRank.length;
+      
+      expect(actual).toEqual(expected);
+    });
+
+  });
+});
