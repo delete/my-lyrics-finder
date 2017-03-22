@@ -1,6 +1,6 @@
 import { lastFiveLyrics } from '../dataMock';
 
-describe('Topfive component', () => {
+describe('Component: Aside', () => {
   beforeEach(() => {
     angular.mock.module('components.home.aside');
   });
