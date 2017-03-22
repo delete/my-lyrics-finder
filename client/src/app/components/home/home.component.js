@@ -32,12 +32,11 @@ export const homeComponent = {
     }
 
     doSearch(event){
-      console.log('aa')
       var vm = this;
       var lyrics = event.lyrics;
       if ( lyrics ) {
         this._VagalumeService.search(lyrics.artist, lyrics.music)
-          .$promise.then( data => vm.lyrics = data);
+                              .$promise.then( data => vm.lyrics = data);
       }
     };
 

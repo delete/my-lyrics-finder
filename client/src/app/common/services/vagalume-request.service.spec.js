@@ -27,7 +27,7 @@ describe('Service: VagalumeRequestService', function () {
   });
 
   describe('Search method', () => {
-    it('The seach should return the right lyrics', () => {
+    it('The search should return the right lyrics', () => {
       const artist = 'PearlJam';
       const music = 'Black';
       const respond = lyrics;        
@@ -36,7 +36,7 @@ describe('Service: VagalumeRequestService', function () {
       expect(result.art.id).toEqual(lyrics.art.id);
     });
 
-    it('The seach should return notfound when artist does not exist', () => {
+    it('The search should return notfound when artist does not exist', () => {
       const artist = 'PearlJamaaaaa';
       const music = 'Black';
       const expected = 'notfound';
@@ -46,7 +46,7 @@ describe('Service: VagalumeRequestService', function () {
       expect(result.type).toEqual(expected);
     });
 
-    it('The seach should return song_notfound when music does not exist', () => {
+    it('The search should return song_notfound when music does not exist', () => {
       const artist = 'PearlJam';
       const music = 'Blackaaaaa';
       const expected = 'song_notfound';
