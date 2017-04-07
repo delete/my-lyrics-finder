@@ -3,11 +3,11 @@ import templateUrl from './favorites-page.html';
 export const favoritesPageComponent = {
   templateUrl,
   controller: class FavoritesPageComponent {
-    constructor(VagalumeService, FavoritesService) {
+    constructor(VagalumeRequestService, FavoritesService) {
       'ngInject';
 
       this.vagalumeFavorite = FavoritesService;
-      this.vagalume = VagalumeService;
+      this.vagalume = VagalumeRequestService;
     }
 
     hasFavorites() {

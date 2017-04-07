@@ -1,7 +1,7 @@
 import uiRouter from 'angular-ui-router';
 import 'ngstorage';
 
-import { common } from '../../common/common.module';
+import { services } from '../../common/services/services.module';
 
 import { favoritesPageComponent } from './favorites-page.component';
 import { favoritesComponent } from './favorites.component';
@@ -13,7 +13,7 @@ export const favorites = angular
   .module('components.favorites', [
     uiRouter,
     'ngStorage',
-    common // use VagalumeService
+    services // use VagalumeRequestService
   ])
   .component('favoritesPage', favoritesPageComponent)
   .component('favorites', favoritesComponent)
