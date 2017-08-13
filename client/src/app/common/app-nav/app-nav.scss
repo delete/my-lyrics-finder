@@ -64,7 +64,7 @@
   }
 
   &__nav {
-    background-color: #363368;
+    background-color: $moody-blue;
     border-bottom-left-radius: 3px;
     position: absolute;
     transform: translate(0, -1500px);
@@ -80,13 +80,14 @@
 
     &_open {
       transform: translate(0,0);
+      box-shadow: 0px -2px 0px rgba(0, 0, 0, 0.12);
     }
   }
 
   &__link {
     text-decoration: none;
     outline: none;
-    color: #D8DAE5;
+    color: $hawkes-blue;
     font-size: 2em;
     font-weight: 100;
     padding: 2em;
@@ -98,6 +99,7 @@
   &__link:hover, &__link.active {
     background-color: $moody-blue;
     border-radius: 3px;
+    font-weight: 400;
   }
 
   @media screen and (min-width: 768px) {

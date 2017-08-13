@@ -41,20 +41,24 @@
   }
 
   &__input:focus {
-    border: 1px solid #776ece;
+    border: 1px solid $moody-blue;
   }
 
   &__button {
-    padding: 5px 10px;
+    padding: 6px 10px;
     background-color: transparent;
     color: $deep-koama;
     position: absolute;
-    right: -39px;
+    right: -48px;
     top: 11px;
     transition: all .3s;
 
+    @media screen and (min-width: 768px) {
+      right: -57px;
+    }
+
     &:hover {
-      background-color: #363368;
+      background-color: $deep-koama;
       border-radius: 3px;
       color: #fff; 
     }

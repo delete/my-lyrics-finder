@@ -5,3 +5,13 @@ $cold-purple: #9D81CE;
 $biloba-flower: #AF91CF;
 $hawkes-blue: #D8DAE5;
 $ghost-white: #F4F4F8;
+$bg-color: #f9f9f9;
+
+
+// Animations
+@keyframes flyin {
+  from { 
+    transform: translateY(100%);
+    opacity:0; 
+  }
+}
